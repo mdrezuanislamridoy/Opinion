@@ -1,42 +1,41 @@
 package com.opinion.filters;
 
-import jakarta.servlet.Filter;
-import jakarta.servlet.http.HttpFilter;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-
 import java.io.IOException;
+
+import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.FilterConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
 import jakarta.servlet.annotation.WebFilter;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
-@WebFilter(filterName = "profile", urlPatterns = {"/profilepage"})
-public class ProfilePageF extends HttpFilter implements Filter {
+@WebFilter(filterName = "profileFilter", urlPatterns = {"/profilepage"})
+public class ProfilePageF implements Filter {
        
- 
-	public void destroy() {
-		// TODO Auto-generated method stub
-	}
+    public void destroy() {
+        // Cleanup resources if needed
+    }
 
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		HttpServletRequest hsr = (HttpServletRequest) request;
-		HttpServletResponse hsrs = (HttpServletResponse) response;
-		HttpSession hs = hsr.getSession();
-		String name = (String) hs.getAttribute("name");
-		if (name==null) {
-			hsrs.sendRedirect("loginpage");
-		}else {
-			chain.doFilter(request, response);
-		}
-		
-	}
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+        HttpServletRequest httpRequest = (HttpServletRequest) request;
+        HttpServletResponse httpResponse = (HttpServletResponse) response;
+        HttpSession session = httpRequest.getSession(false); // Do not create session if it doesn't exist
 
-	public void init(FilterConfig fConfig) throws ServletException {
-		// TODO Auto-generated method stub
-	}
+        // Check if user is logged in
+        if (session != null && session.getAttribute("name") != null) {
+            // User is logged in, allow access to the profile page
+            chain.doFilter(request, response);
+        } else {
+            // User is not logged in, redirect to the login page
+            httpResponse.sendRedirect(httpRequest.getContextPath() + "/loginpage");
+        }
+    }
 
+    public void init(FilterConfig fConfig) throws ServletException {
+        // Initialization code if needed
+    }
 }

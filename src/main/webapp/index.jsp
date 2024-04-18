@@ -35,12 +35,13 @@
             <p>Lorem ipsum dolor sit.</p>
             <p>Lorem ipsum dolor sit.</p></div>
 
-            
+           <%--
             <div class="flex justify-around p-4 text-lg bg-gray-200 absolute w-full bottom-0 left-0">
                 <i class="fa-regular fa-square"></i>
                 <i class="fa-regular fa-circle"></i>
                 <i class="fa-solid fa-caret-right"></i>
             </div>
+             --%>
         </div>
     </body>
 
