@@ -17,6 +17,14 @@
     <url-pattern>/signuppage</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>profilePage</servlet-name>
+    <jsp-file>/user/profile.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>profilePage</servlet-name>
+    <url-pattern>/profilepage</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <description></description>
     <display-name>Login</display-name>
     <servlet-name>Login</servlet-name>
@@ -36,13 +44,5 @@
     <servlet-name>SignUp</servlet-name>
     <url-pattern>/SignUp</url-pattern>
   </servlet-mapping>
-  <filter>
-    <display-name>loginPage</display-name>
-    <filter-name>loginPage</filter-name>
-    <filter-class>com.opinion.filters.loginPage</filter-class>
-  </filter>
-  <filter-mapping>
-    <filter-name>loginPage</filter-name>
-    <url-pattern>/loginPage</url-pattern>
-  </filter-mapping>
+
 </web-app>
