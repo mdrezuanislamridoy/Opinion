@@ -9,7 +9,7 @@
 </head>
 <body class="bg-gray-200 h-screen flex justify-center items-center ">
 	<div class="w-96 border-4 border-black bg-white shadow-md rounded-lg flex items-center justify-center" style="height: 600px;">
-		<div></div>
+		<div>h</div>
 	</div>
 </body>
 </html>

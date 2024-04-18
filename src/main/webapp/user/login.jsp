@@ -16,7 +16,7 @@
                     <i class="fa-solid fa-user text-4xl"></i>
                 </div>
                 <h1 class="text-2xl mt-2 mb-4 font-semibold">Login Here</h1>
-                <form action="Login" class="w-full max-w-md" method="post">
+                <form action="LoginS" class="w-full max-w-md" method="post">
                     <label for="gmail" class="my-2 w-full">Enter your email</label><br>
                     <input type="email" id="gmail" name="gmail" class="my-2 outline-none w-full px-2"><br>
                     <label for="password" class="my-2 w-full">Enter your password</label><br>
@@ -26,12 +26,14 @@
                     <p class="text-sm text-center">don't have an account <a href="signuppage" class="text-blue-500">SignUp</a></p>
                 </form>
             </div>
-
+            <%--
             <div class="flex justify-around p-4 text-lg bg-gray-200 absolute w-full bottom-0 left-0">
                 <i class="fa-regular fa-square"></i>
                 <i class="fa-regular fa-circle"></i>
                 <i class="fa-solid fa-caret-right"></i>
             </div>
+             --%>
+            
         </div>
     </body>
 

@@ -14,7 +14,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-
+@WebServlet("/loginS")
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -33,6 +33,7 @@ public class Login extends HttpServlet {
 				HttpSession hs = request.getSession();
 				hs.setAttribute("name", name);
 				hs.setAttribute("gmail", gmail);
+				response.sendRedirect("profilepage");
 			}else {
 				response.getWriter().print("login Failed");
 			}

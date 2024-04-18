@@ -12,7 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-
+@WebServlet("/signupS")
 public class SignUp extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
