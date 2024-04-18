@@ -1,21 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" version="6.0">
-	<servlet>
-        <servlet-name>loginpage</servlet-name>
-        <jsp-file>/user/login.jsp</jsp-file>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>loginpage</servlet-name>
-        <url-pattern>/loginpage</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>signuppage</servlet-name>
-        <jsp-file>/user/signup.jsp</jsp-file>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>signuppage</servlet-name>
-        <url-pattern>/signuppage</url-pattern>
-    </servlet-mapping>
+  <servlet>
+    <servlet-name>loginpage</servlet-name>
+    <jsp-file>/user/login.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>loginpage</servlet-name>
+    <url-pattern>/loginpage</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>signuppage</servlet-name>
+    <jsp-file>/user/signup.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>signuppage</servlet-name>
+    <url-pattern>/signuppage</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Login</display-name>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>com.opinion.user.Login</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SignUp</display-name>
+    <servlet-name>SignUp</servlet-name>
+    <servlet-class>com.opinion.user.SignUp</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SignUp</servlet-name>
+    <url-pattern>/SignUp</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <display-name>loginPage</display-name>
+    <filter-name>loginPage</filter-name>
+    <filter-class>com.opinion.filters.loginPage</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>loginPage</filter-name>
+    <url-pattern>/loginPage</url-pattern>
+  </filter-mapping>
 </web-app>

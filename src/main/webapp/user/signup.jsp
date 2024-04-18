@@ -18,7 +18,7 @@
                     <i class="fa-solid fa-user text-4xl"></i>
                 </div>
                 <h1 class="text-2xl mt-2 mb-4 font-semibold">SignUp Here</h1>
-                <form action="" class="w-full max-w-md">
+                <form action="SignUp" class="w-full max-w-md" method="post">
                     <label for="name" class="my-2 w-full" >Enter your name</label><br>
                     <input type="text" id="name" name="name" class="my-2 outline-none w-full px-2"><br>
                     <label for="gmail" class="my-2 w-full">Enter your email</label><br>
